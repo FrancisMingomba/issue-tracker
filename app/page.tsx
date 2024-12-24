@@ -1,4 +1,3 @@
-
 import prisma from '@/prisma/client';
 import IssueSummary from './IssueSummary';
 import LatestIssues from './LatestIssues';
@@ -19,21 +18,21 @@ export default async function Home() {
 
   return (
     <Grid columns={{ initial: '1', md: '2' }} gap="5">
-      <Flex direction="column" gap="5">
-        <IssueSummary
-          open={open}
-          inProgress={inProgress}
-          closed={closed}
-        />
-        <IssueChart
-          open={open}
-          inProgress={inProgress}
-          closed={closed}
-        />
-      </Flex>
-      <LatestIssues />
-    </Grid>
-  );
+    <Flex direction="column" gap="5">
+      <IssueSummary
+        open={open}
+        inProgress={inProgress}
+        closed={closed}
+      />
+      <IssueChart
+        open={open}
+        inProgress={inProgress}
+        closed={closed}
+      />
+    </Flex>
+    <LatestIssues />
+  </Grid>
+);
 }
 
 export const dynamic = 'force-dynamic'; 
