@@ -51,7 +51,7 @@ export async function PATCH(
 
   return NextResponse.json(updatedIssue);
 }
-
+/*
 export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -75,3 +75,4 @@ export async function DELETE(
 
   return NextResponse.json({});
 }
+  */
