@@ -6,11 +6,11 @@ import IssueTable, { IssueQuery, columnNames } from './IssueTable';
 import { Flex } from '@radix-ui/themes';
 import { Metadata } from 'next';
 
-interface Props {
-  searchParams: IssueQuery
-}
+//interface Props {
+ //searchParams: IssueQuery
+//}
 
-const IssuesPage = async ({ searchParams }: Props) => {
+const IssuesPage = async ({ searchParams }: {searchParams: IssueQuery}) => {
   const statuses = Object.values(Status);
   const status = statuses.includes(searchParams.status)
     ? searchParams.status
