@@ -4,7 +4,7 @@ import { Skeleton } from "@/app/components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { AiFillBug } from "react-icons/ai";
+import { GrWorkshop } from "react-icons/gr";
 import classnames from "classnames";
 import { useSession } from "next-auth/react";
 import {
@@ -23,7 +23,7 @@ const NavBar = () => {
         <Flex justify="between">
           <Flex align="center" gap="3">
             <Link href="/">
-              <AiFillBug />
+            <GrWorkshop />
             </Link>
             <NavLinks />
           </Flex>

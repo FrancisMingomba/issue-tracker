@@ -1,9 +1,7 @@
-
 import { Status } from '@prisma/client';
-import { Card,Text, Flex } from '@radix-ui/themes'
+import { Card, Flex, Text } from '@radix-ui/themes';
 import Link from 'next/link';
-import React from 'react'
-
+import React from 'react';
 
 interface Props {
   open: number;
@@ -11,35 +9,38 @@ interface Props {
   closed: number;
 }
 
-const IssueSummary = ({open, inProgress, closed}: Props) => {
+const IssueSummary = ({ open, inProgress, closed }: Props) => {
+  const containers: {
+    label: string;
+    value: number;
+    status: Status;
+  }[] = [
+    { label: 'Open Issues', value: open, status: 'OPEN' },
+    {
+      label: 'In-progress Issues',
+      value: inProgress,
+      status: 'IN_PROGRESS',
+    },
+    { label: 'Closed Issues', value: closed, status: 'CLOSED' },
+  ];
 
-    const containers:{
-      label: string;
-      value: number;
-      status: Status
-
-    }[] = [
-      {label: 'Open Issue', value: open, status: 'OPEN'},
-      {label: 'In-Progress Issue', value: inProgress, status: 'IN_PROGRESS'},
-      {label: 'Closed Issue', value: closed, status: 'CLOSED'},
-    ];
-  
   return (
-   <Flex gap="4">
-      {containers.map(container => (
+    <Flex gap="4">
+      {containers.map((container) => (
         <Card key={container.label}>
           <Flex direction="column" gap="1">
-            <Link className="text-sm font-medium"
+            <Link
+              className='text-sm font-medium'
               href={`/issues/list?status=${container.status}`}
             >
               {container.label}
-              </Link>
-              <Text size="5" className='font-bold'>{container.value}</Text>
+            </Link>
+            <Text size="5" className='font-bold'>{container.value}</Text>
           </Flex>
         </Card>
       ))}
-   </Flex>
-  )
-}
+    </Flex>
+  );
+};
 
-export default IssueSummary
+export default IssueSummary;
