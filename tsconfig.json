@@ -16,10 +16,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "types": [
-      "@types/react",
-      "@types/react-dom"
-    ],
+    "types": ["@types/react", "@types/react-dom"],
     "incremental": true,
     "plugins": [
       {
